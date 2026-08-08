@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dw2xbn2n5fnwp" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://c2hpb3rs50k1e" path="res://longimage2.jpg" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://b26i7cdyhbstm" path="res://shop.png" id="3_h2yge"]
+[ext_resource type="FontFile" uid="uid://ohc440qvyncx" path="res://Font/Public-Pixel/PublicPixel.ttf" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://b3xiwrjfijm2p" path="res://Menu.gd" id="4_lquwl"]
 
 [node name="Node2D" type="Node2D" unique_id=1803306]
 script = ExtResource("1_0xm2m")
@@ -19,205 +21,134 @@ offset_right = 249.0
 offset_bottom = 139.0
 texture_normal = ExtResource("3_h2yge")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=784947879]
+[node name="Menu" type="ScrollContainer" parent="." unique_id=784947879]
 offset_left = 193.0
 offset_top = 5.0
 offset_right = 250.0
 offset_bottom = 127.0
+script = ExtResource("4_lquwl")
+SpeedMax = 50
+PowerMax = 6
+QualityMax = 5
+EffiMax = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=332613171]
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=332613171]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Speed" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=555801542]
+[node name="Speed" type="ColorRect" parent="Menu/VBoxContainer" unique_id=555801542]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 color = Color(1, 1, 0.30980393, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed" unique_id=1511923932]
+[node name="SpeedLabel" type="RichTextLabel" parent="Menu/VBoxContainer/Speed" unique_id=1511923932]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 3.0
+offset_top = 2.0
 offset_right = 49.0
-offset_bottom = 11.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
-text = "Speed 0/10"
-
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed" unique_id=1243738125]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 1.0
-offset_right = 48.0
 offset_bottom = 14.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_1bvp3")
+theme_override_font_sizes/normal_font_size = 5
+text = "Speed
+0/10"
+
+[node name="SpeedButton" type="Button" parent="Menu/VBoxContainer/Speed" unique_id=1243738125]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 1.0
+offset_right = 56.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("4_1bvp3")
 theme_override_font_sizes/font_size = 3
 text = "$20"
 
-[node name="Power2" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=1069910763]
+[node name="Power" type="ColorRect" parent="Menu/VBoxContainer" unique_id=93730734]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 color = Color(1, 1, 0.30980393, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Power2" unique_id=1205848547]
+[node name="PowerLabel" type="RichTextLabel" parent="Menu/VBoxContainer/Power" unique_id=630762175]
+texture_filter = 1
 layout_mode = 0
 offset_left = 2.0
-offset_top = 3.0
+offset_top = 2.0
 offset_right = 49.0
-offset_bottom = 11.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
-text = "Power 0/10"
-
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Power2" unique_id=1269920011]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 1.0
-offset_right = 48.0
 offset_bottom = 14.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_1bvp3")
+theme_override_font_sizes/normal_font_size = 5
+text = "Power
+0/10"
+
+[node name="PowerButton" type="Button" parent="Menu/VBoxContainer/Power" unique_id=1320614302]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 1.0
+offset_right = 56.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("4_1bvp3")
 theme_override_font_sizes/font_size = 3
 text = "$20"
 
-[node name="Speed3" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=1523551225]
+[node name="Quality" type="ColorRect" parent="Menu/VBoxContainer" unique_id=1574549180]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 color = Color(1, 1, 0.30980393, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed3" unique_id=1577968749]
+[node name="QualityLabel" type="RichTextLabel" parent="Menu/VBoxContainer/Quality" unique_id=1738248768]
+texture_filter = 1
 layout_mode = 0
 offset_left = 2.0
-offset_top = 3.0
+offset_top = 2.0
 offset_right = 49.0
-offset_bottom = 11.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
-text = "Speed 0/10"
-
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed3" unique_id=1331223965]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 1.0
-offset_right = 48.0
 offset_bottom = 14.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_1bvp3")
+theme_override_font_sizes/normal_font_size = 5
+text = "Quality
+0/10"
+
+[node name="QualityButton" type="Button" parent="Menu/VBoxContainer/Quality" unique_id=213723812]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 1.0
+offset_right = 56.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("4_1bvp3")
 theme_override_font_sizes/font_size = 3
 text = "$20"
 
-[node name="Speed4" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=1152620707]
+[node name="Efficiency" type="ColorRect" parent="Menu/VBoxContainer" unique_id=1271911070]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 color = Color(1, 1, 0.30980393, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed4" unique_id=2135780126]
+[node name="EfficiencyLabel" type="RichTextLabel" parent="Menu/VBoxContainer/Efficiency" unique_id=1868693101]
+texture_filter = 1
 layout_mode = 0
 offset_left = 2.0
 offset_top = 3.0
 offset_right = 49.0
-offset_bottom = 11.0
+offset_bottom = 15.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
-text = "Speed 0/10"
+theme_override_fonts/normal_font = ExtResource("4_1bvp3")
+theme_override_font_sizes/normal_font_size = 3
+text = "Efficiency
+0/10"
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed4" unique_id=1799213263]
+[node name="EfficiencyButton" type="Button" parent="Menu/VBoxContainer/Efficiency" unique_id=1324229204]
 layout_mode = 0
-offset_left = 34.0
+offset_left = 37.0
 offset_top = 1.0
-offset_right = 48.0
+offset_right = 56.0
 offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("4_1bvp3")
 theme_override_font_sizes/font_size = 3
 text = "$20"
 
-[node name="Speed5" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=2066715649]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
-color = Color(1, 1, 0.30980393, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed5" unique_id=1506510402]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 49.0
-offset_bottom = 11.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
-text = "Speed 0/10"
-
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed5" unique_id=1347720304]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 1.0
-offset_right = 48.0
-offset_bottom = 14.0
-theme_override_font_sizes/font_size = 3
-text = "$20"
-
-[node name="Speed6" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=891981243]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
-color = Color(1, 1, 0.30980393, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed6" unique_id=1187948660]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 49.0
-offset_bottom = 11.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
-text = "Speed 0/10"
-
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed6" unique_id=570333664]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 1.0
-offset_right = 48.0
-offset_bottom = 14.0
-theme_override_font_sizes/font_size = 3
-text = "$20"
-
-[node name="Speed7" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=2095444520]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
-color = Color(1, 1, 0.30980393, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed7" unique_id=952325423]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 49.0
-offset_bottom = 11.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
-text = "Speed 0/10"
-
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed7" unique_id=940602528]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 1.0
-offset_right = 48.0
-offset_bottom = 14.0
-theme_override_font_sizes/font_size = 3
-text = "$20"
-
-[node name="Speed8" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=1562730446]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
-color = Color(1, 1, 0.30980393, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed8" unique_id=694797033]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 49.0
-offset_bottom = 11.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
-text = "Speed 0/10"
-
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed8" unique_id=2080460273]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 1.0
-offset_right = 48.0
-offset_bottom = 14.0
-theme_override_font_sizes/font_size = 3
-text = "$20"
+[connection signal="pressed" from="Menu/VBoxContainer/Speed/SpeedButton" to="Menu" method="_on_speed_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Power/PowerButton" to="Menu" method="_on_power_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Quality/QualityButton" to="Menu" method="_on_quality_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Efficiency/EfficiencyButton" to="Menu" method="_on_efficiency_button_pressed"]
