@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://b2j72jjltka03"]
+
+[ext_resource type="Script" uid="uid://dw2xbn2n5fnwp" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://c2hpb3rs50k1e" path="res://longimage2.jpg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://b26i7cdyhbstm" path="res://shop.png" id="3_h2yge"]
+
+[node name="Node2D" type="Node2D" unique_id=1803306]
+script = ExtResource("1_0xm2m")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1080337542]
+position = Vector2(127, 937.99994)
+scale = Vector2(4.6897836, 4.689784)
+texture = ExtResource("1_ig7tw")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1458531851]
+offset_left = 244.0
+offset_top = 131.0
+offset_right = 249.0
+offset_bottom = 139.0
+texture_normal = ExtResource("3_h2yge")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=784947879]
+offset_left = 193.0
+offset_top = 5.0
+offset_right = 250.0
+offset_bottom = 127.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=332613171]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Speed" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=555801542]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+color = Color(1, 1, 0.30980393, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed" unique_id=1511923932]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 49.0
+offset_bottom = 11.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+text = "Speed 0/10"
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed" unique_id=1243738125]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 3
+text = "$20"
+
+[node name="Power2" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=1069910763]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+color = Color(1, 1, 0.30980393, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Power2" unique_id=1205848547]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 49.0
+offset_bottom = 11.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+text = "Power 0/10"
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Power2" unique_id=1269920011]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 3
+text = "$20"
+
+[node name="Speed3" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=1523551225]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+color = Color(1, 1, 0.30980393, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed3" unique_id=1577968749]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 49.0
+offset_bottom = 11.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+text = "Speed 0/10"
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed3" unique_id=1331223965]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 3
+text = "$20"
+
+[node name="Speed4" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=1152620707]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+color = Color(1, 1, 0.30980393, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed4" unique_id=2135780126]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 49.0
+offset_bottom = 11.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+text = "Speed 0/10"
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed4" unique_id=1799213263]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 3
+text = "$20"
+
+[node name="Speed5" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=2066715649]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+color = Color(1, 1, 0.30980393, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed5" unique_id=1506510402]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 49.0
+offset_bottom = 11.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+text = "Speed 0/10"
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed5" unique_id=1347720304]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 3
+text = "$20"
+
+[node name="Speed6" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=891981243]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+color = Color(1, 1, 0.30980393, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed6" unique_id=1187948660]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 49.0
+offset_bottom = 11.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+text = "Speed 0/10"
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed6" unique_id=570333664]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 3
+text = "$20"
+
+[node name="Speed7" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=2095444520]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+color = Color(1, 1, 0.30980393, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed7" unique_id=952325423]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 49.0
+offset_bottom = 11.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+text = "Speed 0/10"
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed7" unique_id=940602528]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 3
+text = "$20"
+
+[node name="Speed8" type="ColorRect" parent="ScrollContainer/VBoxContainer" unique_id=1562730446]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+color = Color(1, 1, 0.30980393, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Speed8" unique_id=694797033]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 49.0
+offset_bottom = 11.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+text = "Speed 0/10"
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Speed8" unique_id=2080460273]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 3
+text = "$20"
