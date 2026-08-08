@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://bmhfnmxjujn6u" path="res://Entities/Laser/laser.gd" id="1_33kps"]
 [ext_resource type="Texture2D" uid="uid://dlr14aic75y0h" path="res://Entities/Laser/laser.png" id="1_pfr6o"]
 
-[node name="Laser" type="Node2D" unique_id=1987206801]
+[node name="Laser" type="Node2D" unique_id=1987206801 node_paths=PackedStringArray("_sprite")]
 script = ExtResource("1_33kps")
+_sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=811990469]
 unique_name_in_owner = true

@@ -1,12 +1,15 @@
+@tool
 class_name Laser
 extends Node2D
 
 @export_range(0, 7) var color: int = 0:
 	set = _set_color
-@export_range(0, 5) var size: int = 0:
-	set = _set_size
+@export_range(0, 4) var width: int = 0:
+	set = _set_width
+@export_range(0, 100, 1, "or_greater") var height_px: int = 16:
+	set = _set_height_px
 
-@onready var _sprite: Sprite2D = %Sprite2D
+@export var _sprite: Sprite2D
 
 
 func _set_color(value: int) -> void:
@@ -17,9 +20,17 @@ func _set_color(value: int) -> void:
 	_sprite.region_rect.position.y = 16 * color
 
 
-func _set_size(value: int) -> void:
-	if value < 0 or value > 5:
+func _set_width(value: int) -> void:
+	if value < 0 or value > 4:
 		return
 	
-	size = value
-	_sprite.region_rect.position.x = 32 * size
+	width = value
+	_sprite.region_rect.position.x = 32 * width
+
+
+func _set_height_px(value: int) -> void:
+	if value < 0:
+		return
+	
+	height_px = value
+	_sprite.scale.y = height_px / 16.0
