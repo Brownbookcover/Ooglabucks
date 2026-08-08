@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bcyjuclc6yr8q"]
+
+[ext_resource type="Script" uid="uid://bmhfnmxjujn6u" path="res://Entities/Laser/laser.gd" id="1_33kps"]
+[ext_resource type="Texture2D" uid="uid://dlr14aic75y0h" path="res://Entities/Laser/laser.png" id="1_pfr6o"]
+
+[node name="Laser" type="Node2D" unique_id=1987206801]
+script = ExtResource("1_33kps")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=811990469]
+unique_name_in_owner = true
+texture_repeat = 2
+texture = ExtResource("1_pfr6o")
+offset = Vector2(0, 8)
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 16)
+region_filter_clip_enabled = true
