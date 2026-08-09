@@ -4,7 +4,6 @@ extends Node2D
 @onready var _drill_camera: Camera2D
 @onready var _borehole_camera: Camera2D
 
-
 func _ready():
 	var cameras = find_children("*", "Camera2D") as Array[Camera2D]
 	assert(len(cameras) == 2)

@@ -17,6 +17,8 @@ const HEIGHT = 144
 
 var depth_px: float = 0.0
 
+@export var laser: Laser
+
 func _ready() -> void:
 	assert(len(layer_colors) > 0)
 	assert(len(layer_colors) == len(layer_heights))

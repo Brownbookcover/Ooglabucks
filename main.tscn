@@ -17,16 +17,18 @@ scale = Vector2(0.99999994, 1)
 [node name="Borehole" parent="." unique_id=1018511877 instance=ExtResource("3_7mycd")]
 position = Vector2(256, 0)
 
-[node name="UI" type="Control" parent="." unique_id=1238673818 node_paths=PackedStringArray("borehole")]
+[node name="UI" type="Control" parent="." unique_id=1238673818 node_paths=PackedStringArray("borehole", "drill")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_272bh")
 SpeedMax = 50
-PowerMax = 15
+PowerMax = 5
+QualityMax = 8
 EffiMax = 5
 borehole = NodePath("../Borehole")
+drill = NodePath("../Drill")
 
 [node name="TextureButton" type="TextureButton" parent="UI" unique_id=1458531851]
 layout_mode = 0
