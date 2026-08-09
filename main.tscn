@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b26i7cdyhbstm" path="res://shop.png" id="3_h2yge"]
 [ext_resource type="FontFile" uid="uid://ohc440qvyncx" path="res://Font/Public-Pixel/PublicPixel.ttf" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://b3xiwrjfijm2p" path="res://Menu.gd" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://tlmjm6q0ryjj" path="res://Entities/Drill/drill.tscn" id="6_272bh"]
 
 [node name="Node2D" type="Node2D" unique_id=1803306]
 script = ExtResource("1_0xm2m")
@@ -13,6 +14,8 @@ script = ExtResource("1_0xm2m")
 position = Vector2(127, 937.99994)
 scale = Vector2(4.6897836, 4.689784)
 texture = ExtResource("1_ig7tw")
+
+[node name="Drill" parent="." unique_id=191628532 instance=ExtResource("6_272bh")]
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1458531851]
 offset_left = 244.0
