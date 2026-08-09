@@ -6,7 +6,7 @@
 [node name="Borehole" type="Node2D" unique_id=1018511877 node_paths=PackedStringArray("_background_sprite", "laser")]
 script = ExtResource("1_e2nap")
 layer_colors = Array[Color]([Color(0.050980393, 0.16862746, 0.27058825, 1), Color(0.1254902, 0.23529412, 0.3372549, 1), Color(0.32941177, 0.30588236, 0.40784314, 1), Color(0.5529412, 0.4117647, 0.47843137, 1), Color(0.8156863, 0.5058824, 0.34901962, 1)])
-layer_heights = Array[int]([0, 50, 150, 400, 1000])
+layer_heights = Array[int]([50, 100, 150, 400, 1000])
 _background_sprite = NodePath("BackgroundSprite")
 laser = NodePath("Laser")
 

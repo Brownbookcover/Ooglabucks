@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cw7frbwxe6gee"]
+
+[ext_resource type="Script" uid="uid://ud4yois8qauv" path="res://Entities/DepthMeter/depth_meter.gd" id="1_3odgs"]
+[ext_resource type="Theme" uid="uid://5x7cp0d6sgm" path="res://theme.tres" id="2_nhtbr"]
+
+[sub_resource type="Gradient" id="Gradient_mteif"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.16237113, 0.3969072, 0.6030928, 0.8015464)
+colors = PackedColorArray(0.050980393, 0.16862746, 0.27058825, 1, 0.1254902, 0.23529412, 0.3372549, 1, 0.32941177, 0.30588236, 0.40784314, 1, 0.5529412, 0.4117647, 0.47843137, 1, 0.8156863, 0.5058824, 0.34901962, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7q4hb"]
+gradient = SubResource("Gradient_mteif")
+width = 80
+
+[node name="DepthMeter" type="Control" unique_id=1301946211 node_paths=PackedStringArray("_laser_rect", "_depth_label")]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+script = ExtResource("1_3odgs")
+_gradient_texture = SubResource("GradientTexture1D_7q4hb")
+_laser_rect = NodePath("Laser")
+_depth_label = NodePath("Depth Label")
+
+[node name="Background" type="ColorRect" parent="." unique_id=532163048]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -21.0
+offset_right = 13.0
+offset_bottom = 61.0
+color = Color(0.2, 0.10980392, 0.09019608, 1)
+
+[node name="Gradient" type="TextureRect" parent="." unique_id=1102716957]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -40.0
+offset_right = 92.0
+offset_bottom = -31.0
+grow_vertical = 2
+rotation = 1.5707964
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("GradientTexture1D_7q4hb")
+expand_mode = 5
+
+[node name="Laser" type="ColorRect" parent="." unique_id=859024585]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -20.0
+offset_right = 9.0
+offset_bottom = -20.0
+
+[node name="Depth Label" type="Label" parent="." unique_id=1995096853]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 61.0
+offset_right = 14.0
+offset_bottom = 69.0
+theme = ExtResource("2_nhtbr")
+theme_override_font_sizes/font_size = 5
+text = "10m"
+horizontal_alignment = 1

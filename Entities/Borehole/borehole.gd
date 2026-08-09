@@ -41,8 +41,10 @@ func _process(delta: float) -> void:
 func _draw_to_background() -> void:
 	for y in HEIGHT:
 		var color = layer_colors[1]
+		var total_height = 0
 		for layer_idx in len(layer_heights):
-			if depth_px - HEIGHT + y <= layer_heights[layer_idx]:
+			total_height += layer_heights[layer_idx]
+			if depth_px - (HEIGHT - y) <= total_height:
 				color = layer_colors[layer_idx]
 				break
 		
