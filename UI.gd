@@ -1,4 +1,3 @@
-class_name UI
 extends Control
 
 
@@ -94,7 +93,7 @@ func _on_efficiency_button_pressed() -> void:
 	EffiLabel.text = "Efficency\n"+str(EffiCounter)+"/"+str(EffiMax)
 
 
-static func MoneyConversionFunction(money: float) -> String:
+func MoneyConversionFunction(money: float) -> String:
 	if money < 1000:
 		return str(snapped(money, 0))
 	elif money < 1000000:

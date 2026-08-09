@@ -12,12 +12,18 @@ extends Node2D
 @onready var _background_image: Image
 @onready var _background_texture: ImageTexture
 
+var rng = RandomNumberGenerator.new()
+var DeltaCounter = 0
+
 const WIDTH = 256
 const HEIGHT = 144
 
 var depth_px: float = 0.0
 
+var RockArray: Array[Node2D] = []
+
 @export var laser: Laser
+@export var RockScene: PackedScene
 
 func _ready() -> void:
 	assert(len(layer_colors) > 0)
@@ -32,6 +38,24 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	depth_px += speed_px * delta
+	DeltaCounter += delta
+	if DeltaCounter >= 1:
+		var my_random_number = rng.randi_range(0, 10)
+		if my_random_number == 6:
+			DeltaCounter = 0
+			var rock = RockScene.instantiate()
+			add_child(rock)
+			RockArray.append(rock)
+			my_random_number = rng.randi_range(4, 252)
+			while my_random_number > 89 and my_random_number < 167:
+				my_random_number = rng.randi_range(4, 252)
+			rock.position.x += my_random_number
+			rock.position.y += 150
+	for rock in RockArray:
+		rock.position.y -= speed_px * delta
+		if rock.position.y <= -20:
+			RockArray.erase(rock)
+			rock.queue_free()
 
 
 func _process(delta: float) -> void:

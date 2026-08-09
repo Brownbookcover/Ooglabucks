@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://5x7cp0d6sgm" path="res://theme.tres" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://tlmjm6q0ryjj" path="res://Entities/Drill/drill.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://cw7frbwxe6gee" path="res://Entities/DepthMeter/depth_meter.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://n3la0jl4g30h" path="res://rock.tscn" id="8_5vw27"]
 
 [node name="Main" type="Node2D" unique_id=1803306]
 script = ExtResource("1_0xm2m")
@@ -196,6 +197,9 @@ text = "Camera"
 
 [node name="DepthMeter" parent="CanvasLayer" unique_id=1301946211 node_paths=PackedStringArray("_borehole") instance=ExtResource("7_272bh")]
 _borehole = NodePath("../../Borehole")
+
+[node name="Rock" parent="." unique_id=487545429 instance=ExtResource("8_5vw27")]
+position = Vector2(55, 87)
 
 [connection signal="pressed" from="UI/Menu/VBoxContainer/Speed/SpeedButton" to="UI" method="_on_speed_button_pressed"]
 [connection signal="pressed" from="UI/Menu/VBoxContainer/Power/PowerButton" to="UI" method="_on_power_button_pressed"]

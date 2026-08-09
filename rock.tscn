@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://n3la0jl4g30h"]
+
+[ext_resource type="Texture2D" uid="uid://3y6blc2qgw7" path="res://rocks.png" id="1_68h2w"]
+[ext_resource type="Script" uid="uid://dpokejbhpa2h3" path="res://rockcollision.gd" id="2_wecdg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6u3w7"]
+radius = 8.0
+
+[node name="Rock" type="Node2D" unique_id=487545429]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2060353728]
+texture = ExtResource("1_68h2w")
+region_enabled = true
+region_rect = Rect2(0.924881, 1.9812207, 12.972567, 12.243185)
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1525267165]
+script = ExtResource("2_wecdg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=283797849]
+shape = SubResource("CircleShape2D_6u3w7")
