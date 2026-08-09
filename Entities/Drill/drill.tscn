@@ -68,5 +68,5 @@ libraries/ = SubResource("AnimationLibrary_n46vc")
 speed_scale = 15.0
 
 [node name="Laser" parent="." unique_id=1987206801 instance=ExtResource("4_af4mf")]
-position = Vector2(130, 115)
+position = Vector2(128, 115)
 height_px = 29
