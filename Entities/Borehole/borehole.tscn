@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://jr57m11b82uv" path="res://Entities/Borehole/borehole.gd" id="1_e2nap"]
 [ext_resource type="PackedScene" uid="uid://bcyjuclc6yr8q" path="res://Entities/Laser/laser.tscn" id="2_86eta"]
 [ext_resource type="PackedScene" uid="uid://n3la0jl4g30h" path="res://rock.tscn" id="2_c54sj"]
+[ext_resource type="AudioStream" uid="uid://dxpv2s1d0kfu" path="res://Sounds/qubodup-sci-fi-cow-alien-soundpack/beam-wowow.wav" id="3_c54sj"]
 
-[node name="Borehole" type="Node2D" unique_id=1018511877 node_paths=PackedStringArray("_background_sprite", "laser")]
+[node name="Borehole" type="Node2D" unique_id=1018511877 node_paths=PackedStringArray("_background_sprite", "_audio_stream_player", "laser")]
 script = ExtResource("1_e2nap")
 layer_colors = Array[Color]([Color(0.050980393, 0.16862746, 0.27058825, 1), Color(0.1254902, 0.23529412, 0.3372549, 1), Color(0.32941177, 0.30588236, 0.40784314, 1), Color(0.5529412, 0.4117647, 0.47843137, 1), Color(0.8156863, 0.5058824, 0.34901962, 1)])
 layer_heights = Array[int]([50, 100, 150, 400, 1000])
 _background_sprite = NodePath("BackgroundSprite")
+_audio_stream_player = NodePath("AudioStreamPlayer2D")
 laser = NodePath("Laser")
 RockScene = ExtResource("2_c54sj")
 
@@ -22,3 +24,13 @@ centered = false
 [node name="Laser" parent="." unique_id=1987206801 instance=ExtResource("2_86eta")]
 position = Vector2(128, 0)
 height_px = 112
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=445333679]
+position = Vector2(128, 112)
+stream = ExtResource("3_c54sj")
+volume_db = -8.0
+pitch_scale = 0.75
+autoplay = true
+max_distance = 400.0
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

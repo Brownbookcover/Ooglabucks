@@ -13,6 +13,8 @@ extends Control
 
 @onready var MoneyLabel = $Money/Money
 
+@export var purchase_audio_player: AudioStreamPlayer
+
 var SpeedCounter = 0
 var PowerCounter = 0
 var QualityCounter = 0
@@ -67,6 +69,7 @@ func _process(delta: float) -> void:
 
 func _on_speed_button_pressed() -> void:
 	if SpeedCost <= Money:
+		purchase_audio_player.play()
 		SpeedCounter += 1
 		SpeedLabel.text = "Speed\n"+str(SpeedCounter)+"/"+str(SpeedMax)
 		Money = Money - SpeedCost
@@ -76,6 +79,7 @@ func _on_speed_button_pressed() -> void:
 
 
 func _on_power_button_pressed() -> void:
+	purchase_audio_player.play()
 	PowerCounter += 1
 	PowerLabel.text = "Power\n"+str(PowerCounter)+"/"+str(PowerMax)
 	borehole.laser.width += 1
@@ -83,6 +87,7 @@ func _on_power_button_pressed() -> void:
 
 
 func _on_quality_button_pressed() -> void:
+	purchase_audio_player.play()
 	QualityCounter += 1
 	QualityLabel.text = "Quality\n"+str(QualityCounter)+"/"+str(QualityMax)
 	borehole.laser.color += 1
@@ -90,6 +95,7 @@ func _on_quality_button_pressed() -> void:
 
 
 func _on_efficiency_button_pressed() -> void:
+	purchase_audio_player.play()
 	EffiCounter += 1
 	EffiLabel.text = "Efficency\n"+str(EffiCounter)+"/"+str(EffiMax)
 

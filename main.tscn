@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dw2xbn2n5fnwp" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dxy6o3nb1o10k" path="res://UI.gd" id="2_272bh"]
 [ext_resource type="PackedScene" uid="uid://da6qfrlio5kf7" path="res://Entities/Borehole/borehole.tscn" id="3_7mycd"]
+[ext_resource type="AudioStream" uid="uid://bt7yy0jpfivcr" path="res://Sounds/level-up-power-up-coin-get-13-sounds/Rise01.wav" id="6_5vw27"]
 [ext_resource type="Theme" uid="uid://5x7cp0d6sgm" path="res://theme.tres" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://tlmjm6q0ryjj" path="res://Entities/Drill/drill.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://cw7frbwxe6gee" path="res://Entities/DepthMeter/depth_meter.tscn" id="7_272bh"]
@@ -18,12 +19,13 @@ scale = Vector2(0.99999994, 1)
 [node name="Borehole" parent="." unique_id=1018511877 instance=ExtResource("3_7mycd")]
 position = Vector2(256, 0)
 
-[node name="UI" type="Control" parent="." unique_id=1238673818 node_paths=PackedStringArray("borehole", "drill")]
+[node name="UI" type="Control" parent="." unique_id=1238673818 node_paths=PackedStringArray("purchase_audio_player", "borehole", "drill")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_272bh")
+purchase_audio_player = NodePath("PurchaseAudioPlayer")
 SpeedMax = 50
 PowerMax = 5
 QualityMax = 8
@@ -174,6 +176,10 @@ offset_bottom = 14.0
 theme = ExtResource("6_7mycd")
 theme_override_font_sizes/font_size = 3
 text = "$20"
+
+[node name="PurchaseAudioPlayer" type="AudioStreamPlayer" parent="UI" unique_id=280270937]
+stream = ExtResource("6_5vw27")
+volume_db = -5.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=573428187]
 

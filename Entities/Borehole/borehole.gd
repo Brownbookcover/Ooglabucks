@@ -14,6 +14,7 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 var DeltaCounter = 0
+@export var _audio_stream_player: AudioStreamPlayer2D
 
 const WIDTH = 256
 const HEIGHT = 144
@@ -82,3 +83,7 @@ func _draw_to_background() -> void:
 				_background_image.set_pixel(x, y, color)
 	
 	_background_texture.update(_background_image)
+
+
+func _on_audio_stream_player_2d_finished() -> void:
+	_audio_stream_player.play()
