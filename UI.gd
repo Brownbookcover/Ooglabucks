@@ -34,6 +34,7 @@ var EffiCounter = 0
 
 var Money: float = 0
 
+@export var borehole: Borehole
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -67,8 +68,9 @@ func _on_speed_button_pressed() -> void:
 		SpeedCounter += 1
 		SpeedLabel.text = "Speed\n"+str(SpeedCounter)+"/"+str(SpeedMax)
 		Money = Money - SpeedCost
-		SpeedCost = SpeedCost ** 2
+		SpeedCost = SpeedCost * 2
 		SpeedButton.text = "$"+str(SpeedCost)
+		borehole.speed_px += borehole.additive_speed
 
 
 func _on_power_button_pressed() -> void:
@@ -101,7 +103,25 @@ func MoneyConversionFunction(money: float) -> String:
 	elif money < 1000000000000000:
 		money = snapped(money/1000000000000, 0.1)
 		return str(money)+"T"
-	elif money < 1000000000000000000:
-		money = snapped(money/1000000000000000, 0.1)
+	elif money < 1000000000000000000.0:
+		money = snapped(money/1000000000000000.0, 0.1)
 		return str(money)+"q"
+	elif money < 1000000000000000000000.0:
+		money = snapped(money/1000000000000000000.0, 0.1)
+		return str(money)+"Q"
+	elif money < 1000000000000000000000000.0:
+		money = snapped(money/1000000000000000000000.0, 0.1)
+		return str(money)+"s"
+	elif money < 1000000000000000000000000000.0:
+		money = snapped(money/1000000000000000000000000.0, 0.1)
+		return str(money)+"S"
+	elif money < 1000000000000000000000000000000.0:
+		money = snapped(money/1000000000000000000000000000.0, 0.1)
+		return str(money)+"o"
+	elif money < 1000000000000000000000000000000000.0:
+		money = snapped(money/1000000000000000000000000000000.0, 0.1)
+		return str(money)+"N"
+	elif money < 1000000000000000000000000000000000000.0:
+		money = snapped(money/1000000000000000000000000000000000.0, 0.1)
+		return str(money)+"d"
 	return "naneinf"

@@ -4,6 +4,7 @@ extends Node2D
 @export var layer_colors: Array[Color] = []
 @export var layer_heights: Array[int] = []
 @export var speed_px: float = 5.0
+@export var additive_speed: float = 5.0
 @export var hole_width_px: int = 64
 @export var bottom_offset: int = 32
 
