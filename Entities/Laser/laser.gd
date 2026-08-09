@@ -33,4 +33,11 @@ func _set_height_px(value: int) -> void:
 		return
 	
 	height_px = value
-	_sprite.scale.y = height_px / 16.0
+	_sprite.scale.y = height_px / 8.0
+
+
+func _on_timer_timeout() -> void:
+	if int(_sprite.region_rect.position.y) % 16 == 0:
+		_sprite.region_rect.position.y += 8
+	else:
+		_sprite.region_rect.position.y -= 8

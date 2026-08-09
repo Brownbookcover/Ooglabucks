@@ -98,36 +98,36 @@ static func MoneyConversionFunction(money: float) -> String:
 	if money < 1000:
 		return str(snapped(money, 0))
 	elif money < 1000000:
-		money = snapped(money/1000, 0.1)
-		return str(money)+"K"
+		money = snapped(money/1000, 0.01)
+		return "%3.2f" % money + "k"
 	elif money < 1000000000:
-		money = snapped(money/1000000, 0.1)
-		return str(money)+"M"
+		money = snapped(money/1000000, 0.01)
+		return "%3.2f" % money + "M"
 	elif money < 1000000000000:
-		money = snapped(money/1000000000, 0.1)
-		return str(money)+"B"
+		money = snapped(money/1000000000, 0.01)
+		return "%3.2f" % money + "B"
 	elif money < 1000000000000000:
-		money = snapped(money/1000000000000, 0.1)
-		return str(money)+"T"
+		money = snapped(money/1000000000000, 0.01)
+		return "%3.2f" % money + "T"
 	elif money < 1000000000000000000.0:
-		money = snapped(money/1000000000000000.0, 0.1)
-		return str(money)+"q"
+		money = snapped(money/1000000000000000.0, 0.01)
+		return "%3.2f" % money + "q"
 	elif money < 1000000000000000000000.0:
-		money = snapped(money/1000000000000000000.0, 0.1)
-		return str(money)+"Q"
+		money = snapped(money/1000000000000000000.0, 0.01)
+		return "%3.2f" % money + "Q"
 	elif money < 1000000000000000000000000.0:
-		money = snapped(money/1000000000000000000000.0, 0.1)
-		return str(money)+"s"
+		money = snapped(money/1000000000000000000000.0, 0.01)
+		return "%3.2f" % money + "s"
 	elif money < 1000000000000000000000000000.0:
-		money = snapped(money/1000000000000000000000000.0, 0.1)
-		return str(money)+"S"
+		money = snapped(money/1000000000000000000000000.0, 0.01)
+		return "%3.2f" % money + "S"
 	elif money < 1000000000000000000000000000000.0:
-		money = snapped(money/1000000000000000000000000000.0, 0.1)
-		return str(money)+"o"
+		money = snapped(money/1000000000000000000000000000.0, 0.01)
+		return "%3.2f" % money + "o"
 	elif money < 1000000000000000000000000000000000.0:
-		money = snapped(money/1000000000000000000000000000000.0, 0.1)
-		return str(money)+"N"
+		money = snapped(money/1000000000000000000000000000000.0, 0.01)
+		return "%3.2f" % money + "N"
 	elif money < 1000000000000000000000000000000000000.0:
-		money = snapped(money/1000000000000000000000000000000000.0, 0.1)
-		return str(money)+"d"
+		money = snapped(money/1000000000000000000000000000000000.0, 0.01)
+		return "%3.2f" % money + "d"
 	return "naneinf"
