@@ -10,6 +10,13 @@
 [node name="Main" type="Node2D" unique_id=1803306]
 script = ExtResource("1_0xm2m")
 
+[node name="Drill" parent="." unique_id=191628532 instance=ExtResource("6_272bh")]
+position = Vector2(7.6293945e-06, 0)
+scale = Vector2(0.99999994, 1)
+
+[node name="Borehole" parent="." unique_id=1018511877 instance=ExtResource("3_7mycd")]
+position = Vector2(256, 0)
+
 [node name="UI" type="Control" parent="." unique_id=1238673818]
 layout_mode = 3
 anchors_preset = 0
@@ -171,13 +178,6 @@ offset_bottom = 14.0
 theme = ExtResource("6_7mycd")
 theme_override_font_sizes/font_size = 3
 text = "$20"
-
-[node name="Drill" parent="." unique_id=191628532 instance=ExtResource("6_272bh")]
-position = Vector2(7.6293945e-06, 0)
-scale = Vector2(0.99999994, 1)
-
-[node name="Borehole" parent="." unique_id=1018511877 instance=ExtResource("3_7mycd")]
-position = Vector2(256, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=573428187]
 

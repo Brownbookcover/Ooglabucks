@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dp2tdoegr5ia8" path="res://Entities/Drill/drill.gd" id="1_tsyfr"]
 [ext_resource type="Texture2D" uid="uid://bnopp0elpyv2f" path="res://Entities/Drill/drill legs back.png" id="1_yif4k"]
 [ext_resource type="Texture2D" uid="uid://dy2ukw8dsdu00" path="res://Entities/Drill/drill body.png" id="2_af4mf"]
+[ext_resource type="Texture2D" uid="uid://cf2l7dun3veo4" path="res://Entities/Drill/sky.png" id="2_n46vc"]
+[ext_resource type="Texture2D" uid="uid://dy3sn1ytboclr" path="res://Entities/Drill/ground.png" id="3_owhd2"]
 [ext_resource type="Texture2D" uid="uid://cg5h448fayduu" path="res://Entities/Drill/drill legs front.png" id="3_tsyfr"]
 [ext_resource type="PackedScene" uid="uid://bcyjuclc6yr8q" path="res://Entities/Laser/laser.tscn" id="4_af4mf"]
 
@@ -50,6 +52,14 @@ _animation_player = NodePath("AnimationPlayer")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=843274904]
 anchor_mode = 0
+
+[node name="SkySprite" type="Sprite2D" parent="." unique_id=1759052561]
+texture = ExtResource("2_n46vc")
+centered = false
+
+[node name="GroundSprite" type="Sprite2D" parent="." unique_id=1154790023]
+texture = ExtResource("3_owhd2")
+centered = false
 
 [node name="LegsBackSprite" type="Sprite2D" parent="." unique_id=364822463]
 texture = ExtResource("1_yif4k")

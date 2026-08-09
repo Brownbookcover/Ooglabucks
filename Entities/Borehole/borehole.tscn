@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://da6qfrlio5kf7"]
 
 [ext_resource type="Script" uid="uid://jr57m11b82uv" path="res://Entities/Borehole/borehole.gd" id="1_e2nap"]
+[ext_resource type="PackedScene" uid="uid://bcyjuclc6yr8q" path="res://Entities/Laser/laser.tscn" id="2_86eta"]
 
 [node name="Borehole" type="Node2D" unique_id=1018511877 node_paths=PackedStringArray("_background_sprite")]
 script = ExtResource("1_e2nap")
@@ -14,3 +15,7 @@ enabled = false
 
 [node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=1862645439]
 centered = false
+
+[node name="Laser" parent="." unique_id=1987206801 instance=ExtResource("2_86eta")]
+position = Vector2(128, 0)
+height_px = 112
