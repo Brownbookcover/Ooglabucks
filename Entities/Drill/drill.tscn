@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://tlmjm6q0ryjj"]
 
+[ext_resource type="Script" uid="uid://dp2tdoegr5ia8" path="res://Entities/Drill/drill.gd" id="1_tsyfr"]
 [ext_resource type="Texture2D" uid="uid://bnopp0elpyv2f" path="res://Entities/Drill/drill legs back.png" id="1_yif4k"]
 [ext_resource type="Texture2D" uid="uid://dy2ukw8dsdu00" path="res://Entities/Drill/drill body.png" id="2_af4mf"]
 [ext_resource type="Texture2D" uid="uid://cg5h448fayduu" path="res://Entities/Drill/drill legs front.png" id="3_tsyfr"]
@@ -43,7 +44,12 @@ _data = {
 &"vibrate": SubResource("Animation_tsyfr")
 }
 
-[node name="Drill" type="Node2D" unique_id=191628532]
+[node name="Drill" type="Node2D" unique_id=191628532 node_paths=PackedStringArray("_animation_player")]
+script = ExtResource("1_tsyfr")
+_animation_player = NodePath("AnimationPlayer")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=843274904]
+anchor_mode = 0
 
 [node name="LegsBackSprite" type="Sprite2D" parent="." unique_id=364822463]
 texture = ExtResource("1_yif4k")
@@ -60,7 +66,7 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1665568536]
 libraries/ = SubResource("AnimationLibrary_n46vc")
-speed_scale = 10.0
+speed_scale = 15.0
 
 [node name="Laser" parent="." unique_id=1987206801 instance=ExtResource("4_af4mf")]
 position = Vector2(130, 115)
