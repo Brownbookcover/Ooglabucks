@@ -10,8 +10,15 @@ _sprite = NodePath("Sprite2D")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=811990469]
 unique_name_in_owner = true
 texture_repeat = 2
+scale = Vector2(1, 2)
 texture = ExtResource("1_pfr6o")
-offset = Vector2(0, 8)
+offset = Vector2(0, 4)
 region_enabled = true
-region_rect = Rect2(0, 0, 32, 16)
+region_rect = Rect2(0, 0, 32, 8)
 region_filter_clip_enabled = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1979177]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

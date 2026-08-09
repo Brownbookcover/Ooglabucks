@@ -76,7 +76,7 @@ func _draw_to_background() -> void:
 		dark_color.v *= 0.6
 		
 		for x in WIDTH:
-			if y < HEIGHT - bottom_offset and !(x < WIDTH / 2 - hole_width_px / 2 or x > WIDTH / 2 + hole_width_px / 2):
+			if y < HEIGHT - bottom_offset and !(x < WIDTH / 2.0 - hole_width_px / 2.0 or x > WIDTH / 2.0 + hole_width_px / 2.0):
 				_background_image.set_pixel(x, y, dark_color)
 			else:
 				_background_image.set_pixel(x, y, color)
