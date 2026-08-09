@@ -46,7 +46,6 @@ _data = {
 [node name="Drill" type="Node2D" unique_id=191628532]
 
 [node name="LegsBackSprite" type="Sprite2D" parent="." unique_id=364822463]
-position = Vector2(1, 0)
 texture = ExtResource("1_yif4k")
 centered = false
 
