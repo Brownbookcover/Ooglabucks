@@ -94,7 +94,7 @@ func _draw_to_background() -> void:
 		last_breached_layer = active_layer_idx
 		layer_breached.emit(active_layer_idx)
 	
-	if depth_px >= 50000:
+	if depth_px >= 40000:
 		layer_breached.emit(5)
 
 	for y in HEIGHT:
