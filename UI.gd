@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 		QualityButton.disabled = true
 	#if EffiCounter >= EffiMax:
 		#EffiButton.disabled = true
-	Money = float(Money + (2 ** (QualityCounter * 10)))
+	Money = (Money + (2 ** (QualityCounter * 5)) * (PowerCounter + 1))
 	MoneyLabel.text = "Ooglabucks\n$"+MoneyConversionFunction(Money)
 
 
@@ -85,7 +85,7 @@ func _on_power_button_pressed() -> void:
 		PowerCounter += 1
 		PowerLabel.text = "Power\n"+str(PowerCounter)+"/"+str(PowerMax)
 		Money = Money - PowerCost
-		PowerCost = PowerCost * 3000
+		PowerCost = PowerCost * 150
 		PowerButton.text = "$"+MoneyConversionFunction(PowerCost)
 		borehole.laser.width += 1
 		drill.laser.width += 1
@@ -97,7 +97,7 @@ func _on_quality_button_pressed() -> void:
 		QualityCounter += 1
 		QualityLabel.text = "Quality\n"+str(QualityCounter)+"/"+str(QualityMax)
 		Money = Money - QualityCost
-		QualityCost = QualityCost * 100
+		QualityCost = QualityCost * 50
 		QualityButton.text = "$"+MoneyConversionFunction(QualityCost)
 		borehole.laser.color += 1
 		drill.laser.color += 1
