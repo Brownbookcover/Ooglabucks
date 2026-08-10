@@ -36,6 +36,7 @@ var QualityCounter = 0
 #@export var EffiUpgradeMult = 2
 
 var Money: float = 0.0
+var AllTimeMoney: float = 0.0
 
 @export var borehole: Borehole
 @export var drill: Drill
@@ -55,7 +56,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(QualityCounter)
 	if SpeedCounter >= SpeedMax:
 		SpeedButton.disabled = true
 	if PowerCounter >= PowerMax:
@@ -64,7 +64,8 @@ func _process(delta: float) -> void:
 		QualityButton.disabled = true
 	#if EffiCounter >= EffiMax:
 		#EffiButton.disabled = true
-	Money = (Money + (2 ** (QualityCounter * 5)) * (PowerCounter + 1))
+	Money += (2 ** (QualityCounter * 5)) * (PowerCounter + 1)
+	AllTimeMoney += (2 ** (QualityCounter * 5)) * (PowerCounter + 1)
 	MoneyLabel.text = "Ooglabucks\n$"+MoneyConversionFunction(Money)
 
 

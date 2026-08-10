@@ -85,6 +85,7 @@ func _draw_to_background() -> void:
 	
 	for layer_idx in len(layer_heights):
 		total_height += layer_heights[layer_idx]
+
 		if depth_px <= total_height + bottom_offset:
 			active_layer_idx = layer_idx
 			break
@@ -92,6 +93,9 @@ func _draw_to_background() -> void:
 	if active_layer_idx != last_breached_layer:
 		last_breached_layer = active_layer_idx
 		layer_breached.emit(active_layer_idx)
+	
+	if depth_px >= 50000:
+		layer_breached.emit(5)
 
 	for y in HEIGHT:
 		var color = layer_colors[1]

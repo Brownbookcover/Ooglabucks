@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cw7frbwxe6gee" path="res://Entities/DepthMeter/depth_meter.tscn" id="7_272bh"]
 [ext_resource type="Script" uid="uid://cp2kw2tp7hfdu" path="res://announcement.gd" id="8_5vw27"]
 [ext_resource type="Script" uid="uid://crnq4xh0ov7l6" path="res://start_screen.gd" id="9_kek77"]
+[ext_resource type="Script" uid="uid://cgsqdo0vn0ch6" path="res://end_screen.gd" id="10_4c57u"]
 
 [node name="Main" type="Node2D" unique_id=1803306]
 script = ExtResource("1_0xm2m")
@@ -93,6 +94,7 @@ offset_left = 20.0
 offset_top = 1.0
 offset_right = 54.0
 offset_bottom = 18.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("6_7mycd")
 theme_override_font_sizes/font_size = 6
 text = "$20"
@@ -122,6 +124,7 @@ offset_top = 1.0
 offset_right = 54.0
 offset_bottom = 18.0
 theme_override_font_sizes/font_size = 6
+mouse_default_cursor_shape = 2
 text = "$20"
 
 [node name="Quality" type="ColorRect" parent="UI/Menu/VBoxContainer" unique_id=1574549180]
@@ -148,6 +151,7 @@ offset_left = 20.0
 offset_top = 1.0
 offset_right = 54.0
 offset_bottom = 18.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("6_7mycd")
 theme_override_font_sizes/font_size = 6
 text = "$20"
@@ -177,6 +181,7 @@ offset_left = 37.0
 offset_top = 1.0
 offset_right = 56.0
 offset_bottom = 14.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("6_7mycd")
 theme_override_font_sizes/font_size = 3
 text = "$20"
@@ -192,6 +197,7 @@ offset_left = 228.0
 offset_top = 126.0
 offset_right = 253.0
 offset_bottom = 141.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("6_7mycd")
 theme_override_font_sizes/font_size = 4
 text = "Camera"
@@ -286,10 +292,56 @@ offset_right = 16.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 5
 text = "Let's go!"
 
+[node name="EndScreen" type="ColorRect" parent="CanvasLayer" unique_id=889529401 node_paths=PackedStringArray("ui", "drill", "borehole", "label")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -45.0
+offset_right = 60.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.30980393, 1)
+script = ExtResource("10_4c57u")
+ui = NodePath("../../UI")
+drill = NodePath("../../Drill")
+borehole = NodePath("../../Borehole")
+label = NodePath("Label")
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/EndScreen" unique_id=1085798952]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 7
+theme_override_font_sizes/bold_font_size = 7
+bbcode_enabled = true
+text = "You have breached all the [b]shells[/b] of the planet and reached the center!
+
+You earned x Ooglabucks!
+
+Congratulations!
+
+"
+scroll_active = false
+
 [connection signal="layer_breached" from="Borehole" to="CanvasLayer/Announcement" method="_on_borehole_layer_breached"]
+[connection signal="layer_breached" from="Borehole" to="CanvasLayer/EndScreen" method="_on_borehole_layer_breached"]
 [connection signal="pressed" from="UI/Menu/VBoxContainer/Speed/SpeedButton" to="UI" method="_on_speed_button_pressed"]
 [connection signal="pressed" from="UI/Menu/VBoxContainer/Power/PowerButton" to="UI" method="_on_power_button_pressed"]
 [connection signal="pressed" from="UI/Menu/VBoxContainer/Quality/QualityButton" to="UI" method="_on_quality_button_pressed"]
