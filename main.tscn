@@ -28,7 +28,6 @@ purchase_audio_player = NodePath("PurchaseAudioPlayer")
 SpeedMax = 50
 PowerMax = 5
 QualityMax = 8
-EffiMax = 5
 borehole = NodePath("../Borehole")
 drill = NodePath("../Drill")
 
@@ -85,9 +84,9 @@ text = "Speed
 
 [node name="SpeedButton" type="Button" parent="UI/Menu/VBoxContainer/Speed" unique_id=1243738125]
 layout_mode = 0
-offset_left = 37.0
+offset_left = 34.0
 offset_top = 1.0
-offset_right = 56.0
+offset_right = 53.0
 offset_bottom = 14.0
 theme = ExtResource("6_7mycd")
 theme_override_font_sizes/font_size = 3
@@ -113,9 +112,9 @@ text = "Power
 
 [node name="PowerButton" type="Button" parent="UI/Menu/VBoxContainer/Power" unique_id=1320614302]
 layout_mode = 0
-offset_left = 37.0
+offset_left = 34.0
 offset_top = 1.0
-offset_right = 56.0
+offset_right = 53.0
 offset_bottom = 14.0
 theme_override_font_sizes/font_size = 3
 text = "$20"
@@ -140,15 +139,16 @@ text = "Quality
 
 [node name="QualityButton" type="Button" parent="UI/Menu/VBoxContainer/Quality" unique_id=213723812]
 layout_mode = 0
-offset_left = 37.0
+offset_left = 34.0
 offset_top = 1.0
-offset_right = 56.0
+offset_right = 53.0
 offset_bottom = 14.0
 theme = ExtResource("6_7mycd")
 theme_override_font_sizes/font_size = 3
 text = "$20"
 
 [node name="Efficiency" type="ColorRect" parent="UI/Menu/VBoxContainer" unique_id=1271911070]
+visible = false
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 color = Color(1, 1, 0.30980393, 1)
