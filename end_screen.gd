@@ -19,5 +19,6 @@ Congratulations!
 	
 	ui.visible = false
 	visible = true
+	ui.process_mode = Node.PROCESS_MODE_DISABLED
 	drill.process_mode = Node.PROCESS_MODE_DISABLED
 	borehole.process_mode = Node.PROCESS_MODE_DISABLED

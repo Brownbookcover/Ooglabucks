@@ -7,5 +7,6 @@ extends ColorRect
 func _on_button_pressed() -> void:
 	ui.visible = true
 	visible = false
+	ui.process_mode = Node.PROCESS_MODE_INHERIT
 	drill.process_mode = Node.PROCESS_MODE_INHERIT
 	borehole.process_mode = Node.PROCESS_MODE_INHERIT
