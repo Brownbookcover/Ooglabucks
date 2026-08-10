@@ -7,18 +7,23 @@
 [ext_resource type="Theme" uid="uid://5x7cp0d6sgm" path="res://theme.tres" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://tlmjm6q0ryjj" path="res://Entities/Drill/drill.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://cw7frbwxe6gee" path="res://Entities/DepthMeter/depth_meter.tscn" id="7_272bh"]
+[ext_resource type="Script" uid="uid://cp2kw2tp7hfdu" path="res://announcement.gd" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://crnq4xh0ov7l6" path="res://start_screen.gd" id="9_kek77"]
 
 [node name="Main" type="Node2D" unique_id=1803306]
 script = ExtResource("1_0xm2m")
 
 [node name="Drill" parent="." unique_id=191628532 instance=ExtResource("6_272bh")]
+process_mode = 4
 position = Vector2(7.6293945e-06, 0)
 scale = Vector2(0.99999994, 1)
 
 [node name="Borehole" parent="." unique_id=1018511877 instance=ExtResource("3_7mycd")]
-position = Vector2(256, 0)
+process_mode = 4
+position = Vector2(0, 235)
 
 [node name="UI" type="Control" parent="." unique_id=1238673818 node_paths=PackedStringArray("purchase_audio_player", "borehole", "drill")]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -194,8 +199,101 @@ text = "Camera"
 [node name="DepthMeter" parent="CanvasLayer" unique_id=1301946211 node_paths=PackedStringArray("_borehole") instance=ExtResource("7_272bh")]
 _borehole = NodePath("../../Borehole")
 
+[node name="Announcement" type="ColorRect" parent="CanvasLayer" unique_id=422780199 node_paths=PackedStringArray("timer", "label")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -22.5
+offset_right = 50.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.30980393, 1)
+script = ExtResource("8_5vw27")
+timer = NodePath("Timer")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="CanvasLayer/Announcement" unique_id=1084028004]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "You Breached
+the x Shell!"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Announcement" unique_id=390858889]
+wait_time = 3.0
+
+[node name="StartScreen" type="ColorRect" parent="CanvasLayer" unique_id=2035524579 node_paths=PackedStringArray("ui", "drill", "borehole")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -45.0
+offset_right = 60.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.30980393, 1)
+script = ExtResource("9_kek77")
+ui = NodePath("../../UI")
+drill = NodePath("../../Drill")
+borehole = NodePath("../../Borehole")
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/StartScreen" unique_id=826441978]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = -1.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 6
+theme_override_font_sizes/bold_font_size = 6
+bbcode_enabled = true
+text = "Congratulations young entrepreneur.
+You have earned mining rights to planet
+Oogla-736563726574.
+
+Your job is to manage your newly acquired drill to breach all [b]shells[/b] of the planet and make the most Ooglabucks."
+scroll_active = false
+
+[node name="Button" type="Button" parent="CanvasLayer/StartScreen" unique_id=1685411826]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -18.0
+offset_right = 16.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 5
+text = "Let's go!"
+
+[connection signal="layer_breached" from="Borehole" to="CanvasLayer/Announcement" method="_on_borehole_layer_breached"]
 [connection signal="pressed" from="UI/Menu/VBoxContainer/Speed/SpeedButton" to="UI" method="_on_speed_button_pressed"]
 [connection signal="pressed" from="UI/Menu/VBoxContainer/Power/PowerButton" to="UI" method="_on_power_button_pressed"]
 [connection signal="pressed" from="UI/Menu/VBoxContainer/Quality/QualityButton" to="UI" method="_on_quality_button_pressed"]
 [connection signal="pressed" from="UI/Menu/VBoxContainer/Efficiency/EfficiencyButton" to="UI" method="_on_efficiency_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CameraButton" to="." method="_on_camera_button_pressed"]
+[connection signal="timeout" from="CanvasLayer/Announcement/Timer" to="CanvasLayer/Announcement" method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/StartScreen/Button" to="CanvasLayer/StartScreen" method="_on_button_pressed"]

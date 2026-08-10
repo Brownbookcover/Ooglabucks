@@ -23,7 +23,7 @@ centered = false
 
 [node name="Laser" parent="." unique_id=1987206801 instance=ExtResource("2_86eta")]
 position = Vector2(128, 0)
-height_px = 112
+height_px = 113
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=445333679]
 position = Vector2(128, 112)
@@ -31,6 +31,6 @@ stream = ExtResource("3_c54sj")
 volume_db = -8.0
 pitch_scale = 0.75
 autoplay = true
-max_distance = 400.0
+max_distance = 500.0
 
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

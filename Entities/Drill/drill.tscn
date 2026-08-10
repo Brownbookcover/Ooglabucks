@@ -94,6 +94,6 @@ position = Vector2(128, 95)
 stream = ExtResource("9_wojhk")
 volume_db = -10.0
 autoplay = true
-max_distance = 500.0
+max_distance = 700.0
 
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
