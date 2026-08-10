@@ -66,16 +66,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Speed" type="ColorRect" parent="UI/Menu/VBoxContainer" unique_id=555801542]
-custom_minimum_size = Vector2(0, 15)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 color = Color(1, 1, 0.30980393, 1)
 
 [node name="SpeedLabel" type="RichTextLabel" parent="UI/Menu/VBoxContainer/Speed" unique_id=1511923932]
 layout_mode = 0
 offset_left = 1.0
-offset_top = -1.0
+offset_top = 1.0
 offset_right = 48.0
-offset_bottom = 15.0
+offset_bottom = 17.0
 theme = ExtResource("6_7mycd")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 5
@@ -84,16 +84,16 @@ text = "Speed
 
 [node name="SpeedButton" type="Button" parent="UI/Menu/VBoxContainer/Speed" unique_id=1243738125]
 layout_mode = 0
-offset_left = 34.0
+offset_left = 20.0
 offset_top = 1.0
-offset_right = 53.0
-offset_bottom = 14.0
+offset_right = 54.0
+offset_bottom = 18.0
 theme = ExtResource("6_7mycd")
-theme_override_font_sizes/font_size = 3
+theme_override_font_sizes/font_size = 6
 text = "$20"
 
 [node name="Power" type="ColorRect" parent="UI/Menu/VBoxContainer" unique_id=93730734]
-custom_minimum_size = Vector2(0, 15)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 color = Color(1, 1, 0.30980393, 1)
 
@@ -101,9 +101,9 @@ color = Color(1, 1, 0.30980393, 1)
 texture_filter = 1
 layout_mode = 0
 offset_left = 1.0
-offset_top = -1.0
+offset_top = 1.0
 offset_right = 48.0
-offset_bottom = 15.0
+offset_bottom = 17.0
 theme = ExtResource("6_7mycd")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 5
@@ -112,15 +112,15 @@ text = "Power
 
 [node name="PowerButton" type="Button" parent="UI/Menu/VBoxContainer/Power" unique_id=1320614302]
 layout_mode = 0
-offset_left = 34.0
+offset_left = 20.0
 offset_top = 1.0
-offset_right = 53.0
-offset_bottom = 14.0
-theme_override_font_sizes/font_size = 3
+offset_right = 54.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 6
 text = "$20"
 
 [node name="Quality" type="ColorRect" parent="UI/Menu/VBoxContainer" unique_id=1574549180]
-custom_minimum_size = Vector2(0, 15)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 color = Color(1, 1, 0.30980393, 1)
 
@@ -128,9 +128,9 @@ color = Color(1, 1, 0.30980393, 1)
 texture_filter = 1
 layout_mode = 0
 offset_left = 1.0
-offset_top = -1.0
+offset_top = 1.0
 offset_right = 48.0
-offset_bottom = 15.0
+offset_bottom = 17.0
 theme = ExtResource("6_7mycd")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 5
@@ -139,12 +139,12 @@ text = "Quality
 
 [node name="QualityButton" type="Button" parent="UI/Menu/VBoxContainer/Quality" unique_id=213723812]
 layout_mode = 0
-offset_left = 34.0
+offset_left = 20.0
 offset_top = 1.0
-offset_right = 53.0
-offset_bottom = 14.0
+offset_right = 54.0
+offset_bottom = 18.0
 theme = ExtResource("6_7mycd")
-theme_override_font_sizes/font_size = 3
+theme_override_font_sizes/font_size = 6
 text = "$20"
 
 [node name="Efficiency" type="ColorRect" parent="UI/Menu/VBoxContainer" unique_id=1271911070]
